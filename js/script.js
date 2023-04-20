@@ -30,6 +30,9 @@ createApp({
       // azzero la variabile dell'input
       this.newTodo = "";
     },
+    completeTask(task) {
+      task.status = !task.status;
+    },
   },
   mounted() {
     this.getTodos();

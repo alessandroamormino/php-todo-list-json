@@ -15,7 +15,7 @@
   <div class="centered">
     <ul>
       <li v-for="todo in todos">
-        <span :class="todo.status ? 'done' : ''">{{todo.name}}</span>
+        <span @click="completeTask(todo);" :class="todo.status ? 'done' : ''">{{todo.name}}</span>
       </li>
     </ul>
     <form action="index.php" method="GET">
