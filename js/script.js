@@ -31,8 +31,6 @@ createApp({
       this.newTodo = "";
     },
     completeTask(task, index) {
-      console.log('eseguita');
-
       let data = new FormData();
       data.append('index', index);
       data.append('name', task.name);
@@ -43,6 +41,15 @@ createApp({
       });
 
     },
+    deleteTask(index) {
+      let data = new FormData();
+      data.append('deleteTask', index);
+
+      axios.post('./server.php', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(response => {
+        this.getTodos();
+      });
+
+    }
   },
   mounted() {
     this.getTodos();

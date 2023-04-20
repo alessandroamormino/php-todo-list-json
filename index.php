@@ -16,7 +16,7 @@
     <ul>
       <li v-for="(todo, index) in todos">
         <span @click="completeTask(todo, index);" :class="todo.status ? 'done' : ''">{{todo.name}}</span>
-        <!-- <span @click="deleteTask(index)">X</span> -->
+        <span @click="deleteTask(index)">X</span>
       </li>
     </ul>
     <form action="index.php" method="GET">

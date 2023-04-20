@@ -22,7 +22,7 @@ if(isset($_POST['newTodo'])) {
   // Salvo il nuovo ToDo nel file JSON
   file_put_contents('todos.json', $newTodo);
 
-} elseif(isset($_POST['name']) && isset($_POST['status'])){
+} elseif(isset($_POST['name']) && isset($_POST['status']) && isset($_POST['index'])){
   //  Reperisco il file JSON
   $todosJSON = file_get_contents('todos.json');
 
@@ -52,6 +52,23 @@ if(isset($_POST['newTodo'])) {
 
   // Salvo il nuovo ToDo nel file JSON
   file_put_contents('todos.json', $newTodo);
+
+} elseif(isset($_POST['deleteTask'])){
+  //  Reperisco il file JSON
+  $todosJSON = file_get_contents('todos.json');
+
+  // Trasformo il file JSON in un Array PHP
+  $todos = json_decode($todosJSON);
+
+  // Elimino il task 
+  array_splice($todos, $_POST['deleteTask'], 1);
+
+  // Ritrasformo l'array in un file JSON
+  $newTodo = json_encode($todos);
+
+  // Salvo il nuovo ToDo nel file JSON
+  file_put_contents('todos.json', $newTodo);
+
 } else {
   //  Reperisco il file JSON
   $todosJSON = file_get_contents('todos.json');
