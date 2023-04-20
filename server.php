@@ -1,5 +1,5 @@
 <?php 
-// Controllo se sto ricevendo una chiamata POST
+// Controllo se sto ricevendo una chiamata POST per aggiungere un nuovo task
 if(isset($_POST['newTodo'])) {
   //  Reperisco il file JSON
   $todosJSON = file_get_contents('todos.json');
@@ -8,8 +8,6 @@ if(isset($_POST['newTodo'])) {
   $todos = json_decode($todosJSON);
 
   // Pusho il nuovo ToDo nell'array
-  // $todos[] = $_POST['newTodo'];
-
   // creo un nuovo array letterale
   $obj = [
     "name" => $_POST['newTodo'],
