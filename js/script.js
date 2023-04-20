@@ -16,11 +16,9 @@ createApp({
 
     addTodo() {
       // dichiaro oggetto data 
-      let data = {
-        newTodo: '',
-      }
-      // valorizzo proprietà di data con il mio input
-      data.newTodo = this.newTodo;
+      let data = new FormData();
+      // aggiungo a Data il nuovo task
+      data.append('newTodo', this.newTodo)
 
       // creo una chiamata POST axios che mi aggiunga nel file il nuovo todo inserito da input
       axios.post('./server.php', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(response => {
