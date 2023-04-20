@@ -8,7 +8,15 @@ if(isset($_POST['newTodo'])) {
   $todos = json_decode($todosJSON);
 
   // Pusho il nuovo ToDo nell'array
-  $todos[] = $_POST['newTodo'];
+  // $todos[] = $_POST['newTodo'];
+
+  // creo un nuovo array letterale
+  $obj = [
+    "name" => $_POST['newTodo'],
+    "status" => false
+  ];
+  // pusho il nuovo array/oggetto nell'array esistente
+  $todos[] = $obj;
 
   // Ritrasformo l'array in un file JSON
   $newTodo = json_encode($todos);

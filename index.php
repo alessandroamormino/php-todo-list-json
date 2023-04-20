@@ -15,7 +15,7 @@
   <div class="centered">
     <ul>
       <li v-for="todo in todos">
-        {{todo}}
+        {{todo.name}}
       </li>
     </ul>
     <form action="index.php" method="GET">

@@ -1,10 +1,34 @@
 [
-  "HTML",
-  "CSS",
-  "Bootstrap",
-  "JS",
-  "Vue",
-  "Vite",
-  "PHP",
-  "Database"
+  {
+    "name": "HTML",
+    "status": true
+  },
+  {
+    "name": "CSS",
+    "status": false
+  },
+  {
+    "name": "Bootstrap",
+    "status": false
+  },
+  {
+    "name": "JS",
+    "status": false
+  },
+  {
+    "name": "Vue",
+    "status": false
+  },
+  {
+    "name": "Vite",
+    "status": false
+  },
+  {
+    "name": "PHP",
+    "status": false
+  },
+  {
+    "name": "Database",
+    "status": false
+  }
 ]
