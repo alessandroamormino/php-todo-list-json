@@ -12,7 +12,13 @@
 <body>
 
 <div id="app">
-  
+  <div class="centered">
+    <ul>
+      <li v-for="todo in todos">
+        {{todo}}
+      </li>
+    </ul>
+  </div>
 </div>
 
   
