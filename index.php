@@ -18,6 +18,11 @@
         {{todo}}
       </li>
     </ul>
+    <form action="index.php" method="GET">
+      <label for="newTodo">Inserisci un nuovo ToDo:</label>
+      <input v-model="newTodo" type="text" name="newTodo" id="newTodo" required>
+      <button type="submit" @click="addTodo()">Aggiungi</button>
+    </form>
   </div>
 </div>
 
