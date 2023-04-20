@@ -15,7 +15,7 @@
   <div class="centered">
     <ul>
       <li v-for="todo in todos">
-        {{todo.name}}
+        <span :class="todo.status ? 'done' : ''">{{todo.name}}</span>
       </li>
     </ul>
     <form action="index.php" method="GET">
