@@ -5,13 +5,108 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #001632;
+  font-size: 1.5rem;
+}
+
 /* Assets */
 .centered {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  /* flex */
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+
+  height: 100vh;
+}
+
+h1 {
+  color: white;
+  margin-bottom: .5em;
 }
 
 .done {
   text-decoration: line-through;
+}
+
+.card {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  width: 500px;
+}
+
+.card ul {
+  list-style-type: none;
+}
+
+.card ul li {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5em;
+}
+
+.card ul li span:hover {
+  cursor: pointer;
+}
+
+.card ul li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #00000030;
+}
+
+.card ul li .trash {
+  padding: .5em;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+}
+
+.card ul li .trash span i {
+  color: white;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  /* flex */
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 500px;
+
+  margin-top: 1em;
+}
+
+form input {
+  flex-grow: 1;
+
+  padding: .5em;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 1rem;
+}
+
+form button {
+  padding: .7em 1.2em;
+  border: none;
+  border-radius: 5px;
+  background-color: #efaf0c;
+  font-size: 1rem;
 }

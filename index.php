@@ -8,20 +8,26 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Axios -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
 <div id="app">
   <div class="centered">
-    <ul>
-      <li v-for="(todo, index) in todos">
-        <span @click="completeTask(todo, index);" :class="todo.status ? 'done' : ''">{{todo.name}}</span>
-        <span @click="deleteTask(index)">X</span>
-      </li>
-    </ul>
+    <h1>ToDo List (v.2)</h1>
+    <div class="card">
+      <ul>
+        <li v-for="(todo, index) in todos">
+          <span @click="completeTask(todo, index);" :class="todo.status ? 'done' : ''">{{todo.name}}</span>
+          <div class="trash">
+            <span @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></span>
+          </div>
+        </li>
+      </ul>
+    </div>
     <form action="index.php" method="GET">
-      <label for="newTodo">Inserisci un nuovo ToDo:</label>
-      <input v-model="newTodo" type="text" name="newTodo" id="newTodo" required>
+      <input v-model="newTodo" type="text" name="newTodo" id="newTodo" required placeholder="Inserisci un nuovo ToDo:">
       <button type="submit" @click="addTodo()">Aggiungi</button>
     </form>
   </div>
