@@ -14,8 +14,8 @@
 <div id="app">
   <div class="centered">
     <ul>
-      <li v-for="todo, index in todos">
-        <span :class="todo.status ? 'done' : ''">{{todo.name}}</span>
+      <li v-for="(todo, index) in todos">
+        <span @click="completeTask(todo, index);" :class="todo.status ? 'done' : ''">{{todo.name}}</span>
         <!-- <span @click="deleteTask(index)">X</span> -->
       </li>
     </ul>

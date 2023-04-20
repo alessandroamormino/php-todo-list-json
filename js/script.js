@@ -30,6 +30,19 @@ createApp({
       // azzero la variabile dell'input
       this.newTodo = "";
     },
+    completeTask(task, index) {
+      console.log('eseguita');
+
+      let data = new FormData();
+      data.append('index', index);
+      data.append('name', task.name);
+      data.append('status', !task.status);
+
+      axios.post('./server.php', data, { headers: { 'Content-Type': 'multipart/form-data' } }).then(response => {
+        this.getTodos();
+      });
+
+    },
   },
   mounted() {
     this.getTodos();
