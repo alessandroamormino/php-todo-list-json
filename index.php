@@ -26,7 +26,7 @@
         </li>
       </ul>
     </div>
-    <form action="index.php" method="GET">
+    <form action="" method="GET">
       <input v-model="newTodo" type="text" name="newTodo" id="newTodo" required placeholder="Inserisci un nuovo ToDo:">
       <button type="submit" @click="addTodo()">Aggiungi</button>
     </form>
